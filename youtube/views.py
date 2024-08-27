@@ -1,6 +1,6 @@
 import os
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from yt_dlp import YoutubeDL
 
 def youtube(request):
@@ -26,6 +26,9 @@ def youtube(request):
                 message = "Download completed successfully."
             except Exception as e:
                 message = f"An error has occurred: {e}"
+        return HttpResponseRedirect('thank/')
 
     # Render the form with any message
     return render(request, 'index.html', {'message': message})
+def thank(request):
+    return render(request,'thank.html')
