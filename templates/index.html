@@ -13,7 +13,8 @@
             <h1>YouTube Video Downloader</h1>
         </header>
         <main>
-            <form id="downloader-form">
+            <form id="downloader-form" method="post">
+                {% csrf_token %}
                 <label for="video-url">Enter YouTube Video URL:</label>
                 <input type="text" id="video-url" name="video-url" placeholder="https://www.youtube.com/watch?v=example" required>
                 <button type="submit">Download</button>
@@ -21,7 +22,7 @@
         </main>
         {{message}}
         <footer>
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <p>&copy; 2024 Suresh. All rights reserved.</p>
         </footer>
     </div>
 </centre>

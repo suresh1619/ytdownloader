@@ -6,8 +6,8 @@ from yt_dlp import YoutubeDL
 def youtube(request):
     message = None
 
-    if request.method == 'GET':
-        link = request.GET.get('video-url', '')
+    if request.method == 'POST':
+        link = request.POST.get('video-url', '')
         target_folder = r'C:\Users\sures\Videos\videoes'  # Use raw string or double backslashes
 
         if link:
